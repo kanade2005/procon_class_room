@@ -8,10 +8,9 @@ from library.temperature import Temperature #APIを用いて気温を取得す�
 from library.point import calc_point #ポイントの計算をしている メソッド→calcで計算
 from library.light_check import Light
 import datetime
+import mysql.connector
 
 app = Flask(__name__)
-
-CORS(app)
 
 
 #温度・人数・照明の有無を取得
@@ -68,11 +67,19 @@ def data():
         count = count + 1
 
 
-    #ポイントの計算
-    point_list = point.calc(person_num,check)
-
     #照明の点灯の有無を確認
-    light_c = light.is_light_on(picture_path)
+    light_c = {}
+    light_c['1-1'] = light.is_light_on(picture_path)
+    light_c['1-2'] = light.is_light_on(picture_path)
+    light_c['1-3'] = light.is_light_on(picture_path)
+    light_c['1-4'] = light.is_light_on(picture_path)
+    light_c['2I'] = light.is_light_on(picture_path)
+    light_c['3I'] = light.is_light_on(picture_path)
+    light_c['4I'] = light.is_light_on(picture_path)
+    light_c['5I'] = light.is_light_on(picture_path)
+
+    #ポイントの計算
+    point_list = point.calc(person_num,check,light_c,temp,tempearture)
 
     response = {'tempearture':tempearture,'person_number':person_num,'temp_standard':temp,'checkTemp':check,'point':point_list,'light':light_c}
 
@@ -89,6 +96,18 @@ def weekTemp():
     spreadSheet = SpreadSheet() #スプレッドシートライブラリをインスタンス化
 
     result = spreadSheet.get_week_data_view("プロコンテストデータ","シート9")
+
+    return result
+
+
+@app.route('/weekPoint',methods=['GET'])
+def weekPoint():
+
+    #データを保存する辞書型の変数
+    week_data = {}
+    spreadSheet = SpreadSheet() #スプレッドシートライブラリをインスタンス化
+
+    result = spreadSheet.get_week_data_view("プロコンテストデータ","point")
 
     return result
 
