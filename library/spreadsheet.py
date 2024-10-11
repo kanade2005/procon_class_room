@@ -4,8 +4,10 @@ from oauth2client.service_account import ServiceAccountCredentials
 class SpreadSheet:
     def __init__(self):
         # 認証情報の設定
-        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        self.creds = ServiceAccountCredentials.from_json_keyfile_name('red-charger-428500-m6-31e7d82fa2ae.json', scope)
+        #本来はスプレッドシートのAPIの情報を設定する
+        #今回は公開できないため以下のように対処
+        scope = "認証情報"
+        self.creds = "認証情報"
     
     #こちらはカメラ用に作成している
     def get_latest_data_front(self,sheet_name,row,sheetIndex):
