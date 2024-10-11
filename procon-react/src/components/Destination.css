@@ -1,0 +1,42 @@
+.destinationView{
+    h1 {
+        text-align : center;
+    }
+    
+    .destList{
+        margin : auto;
+        border : solid thick turquoise;
+        width : 70%;
+    }
+    
+    h2{
+        text-align : center;
+    }
+    
+    .space {
+        height: 50px;
+    }
+
+    table{
+        padding-top : 50px;
+        margin : auto;
+        font-size : 20px;
+        width : 70%;
+        border-collapse : collapse;
+    }
+    
+    th{
+        width : 25%;
+        text-align : center;
+    }
+    
+    td{
+        text-align : center;
+    }
+    
+    th,td{
+        border-collapse : collapse;
+        border : thin solid black;
+        height : 40px;
+    }
+}

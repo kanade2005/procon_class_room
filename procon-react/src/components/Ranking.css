@@ -1,0 +1,100 @@
+.rankingView{
+    .Ranking{
+        display : flex;
+        padding : 5%;
+    }
+    
+    .title{
+        padding : 0.25em 0.5em;
+        background : transparent;
+        border-left : solid 5px turquoise;
+        text-align : left;
+        margin-left : 7%;
+    }
+    
+    .rankingArea{
+        width : 100%;
+        margin : auto;
+    }
+
+    .Ranking {
+        margin : auto;
+    }
+    
+    .rank{
+        display : flex;
+        margin : 10px auto;
+        justify-content : center;
+    }
+    
+    .rank p{
+        margin : auto 0 auto 10px;
+        font-size : 5vw;
+        font-weight : bold;
+        text-decoration : white;
+        letter-spacing : 5px;
+    }
+    
+    .rank img{
+        padding : 0;
+    }
+    
+    #second img{
+        margin-left : 5px;
+        margin-right: 5px;
+    }
+    
+    #third img{
+        margin-left : 10px;
+        margin-right : 10px;
+    }
+    
+    .choiceArea{
+        display : block;
+        width : 20%;
+        background-color : rgb(142, 237, 227);
+        border-radius : 10px;
+    }
+    
+    .komidashi{
+        padding : 10px;
+        font-weight: bold;
+        font-size : 17px;
+    }
+    
+    .titleList{
+        margin : 3px 20px;
+        transition : 0.3s;
+    }
+    
+    .closeButton{
+        position : absolute;
+        bottom : 0;
+        left : 50%;
+        transform : translate(-50%,0);
+        max-width : 200px;
+    }
+    
+    @media (hover:hover) {
+        .titleList:hover{
+            color : darkgray;
+            cursor : pointer;
+        }
+    }
+    
+    @media screen and (max-width : 600px){
+        .Ranking {
+            display : block;
+        }
+    
+        .rankingArea {
+            width : 90%;
+            margin :auto;
+        }
+    
+        .choiceArea {
+            width : 90%;
+            margin : auto;
+        }
+    }
+}

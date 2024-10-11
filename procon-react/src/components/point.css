@@ -1,0 +1,103 @@
+.pointView{
+    .point{
+        display : flex;
+        padding : 5%;
+    
+        .graphArea{
+            width : 70%;
+            margin-right: 10%;
+        }
+        
+        .graph {
+            background-color : white;
+            width : 100%;
+        }
+        
+        button {
+            width : 48%;
+            background-color : white;
+            border : solid thin turquoise;
+            font-size : 20px;
+            border-radius : 5px;
+            margin-left : 1%;
+            margin-right : 1%;
+            transition : 0.3s;
+        }
+        
+        .toggleList {
+            display : block;
+            width : 20%;
+            background-color : rgb(142, 237, 227);
+            border-radius : 10px;
+        }
+        label{
+            margin : 20px;
+            transition : 0.3s;
+        }
+        .toggleList p {
+            margin : 3px 25px;
+            transition : 0.3s;
+        }
+        #toggle1,#toggle-inner1,#toggle2,#toggle-inner2,#toggle3,#toggle-inner3,#toggle4,#toggle-inner4,#toggle5,#toggle-inner5{
+            display: none;
+        }
+        #toggle1:checked ~ #toggle-inner1{
+            display:block;
+        }
+        #toggle2:checked ~ #toggle-inner2{
+            display:block;
+        }
+        #toggle3:checked ~ #toggle-inner3{
+            display:block;
+        }
+        #toggle4:checked ~ #toggle-inner4{
+            display:block;
+        }
+        #toggle5:checked ~ #toggle-inner5{
+            display:block;
+        }
+    
+        button:focus{
+            background-color: turquoise !important;
+        }
+    }
+    
+    
+    @media (hover: hover){
+        label:hover{
+            color : darkgray;
+            cursor : pointer;
+        }
+        button:hover{
+            background-color : rgb(145, 237, 227);
+            cursor : pointer;
+        }
+        .toggleList p:hover{
+            color : white;
+            cursor : pointer;
+        }
+    }
+    
+    
+    @media screen and (max-width: 600px) {
+        .point{
+            display : block;
+    
+            .graphArea {
+                margin : auto;
+                width : 90%;
+                margin-bottom : 50px;
+            }
+        
+            .toggleList{
+                width : 90%;
+                font-size : 20px;
+                margin : auto;
+            }
+        
+            label {
+                padding : 5px;
+            }
+        }
+    }
+}
