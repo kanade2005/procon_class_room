@@ -7,10 +7,11 @@ import os
 class PictureGet:
     def __init__(self):
         # サービスアカウントの認証情報ファイルのパス
-        SERVICE_ACCOUNT_FILE = 'red-charger-428500-m6-31e7d82fa2ae.json'
+        #APIの認証情報を公開できないため以下のように対処
+        SERVICE_ACCOUNT_FILE = '認証情報'
 
         # 認証スコープ
-        SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
+        SCOPES = "認証情報"
 
         # 認証情報を読み込む
         creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
